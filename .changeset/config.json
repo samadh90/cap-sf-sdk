@@ -1,0 +1,16 @@
+{
+  "$schema": "https://unpkg.com/@changesets/config@2.3.0/schema.json",
+  "changelog": [
+    "@changesets/changelog-github",
+    {
+      "repo": "samadh90/cap-sf-sdk"
+    }
+  ],
+  "commit": false,
+  "linked": [],
+  "fixed": [],
+  "baseBranch": "main",
+  "access": "public",
+  "updateInternalDependencies": "patch",
+  "ignore": []
+}
