@@ -2,6 +2,7 @@ import { buildQueryString } from './builders/buildQueryString'
 import { parseSelect } from './parsers/select'
 import { parseFilter } from './parsers/filter'
 import { parseOrderBy } from './parsers/orderby'
+import { parseExpand } from './parsers/expand'
 import type { CqnSelect, ODataOptions } from './types'
 
 /**
@@ -25,7 +26,17 @@ import type { CqnSelect, ODataOptions } from './types'
 export function cqnToOData(select: CqnSelect, opts?: ODataOptions): string {
   const params: Record<string, string> = {}
 
-  if (select.columns) params['$select'] = parseSelect(select.columns)
+  if (select.columns) {
+    const selectStr = parseSelect(select.columns)
+    if (selectStr) params['$select'] = selectStr
+
+    // $expand from columns entries carrying expand definitions
+    const hasExpand = select.columns.some((c: any) => c?.expand || c?.isExpand)
+    if (hasExpand) {
+      const expandStr = parseExpand(select.columns)
+      if (expandStr) params['$expand'] = expandStr
+    }
+  }
   if (select.where) params['$filter'] = parseFilter(select.where)
   if (select.orderBy) params['$orderby'] = parseOrderBy(select.orderBy)
   if (select.limit?.rows) params['$top'] = String(select.limit.rows.val)

@@ -54,6 +54,16 @@ describe('cqnToOData', () => {
     expect(result).toContain('$format=json')
   })
 
+  it('includes $expand from columns and excludes expanded navs from $select', () => {
+    const cqn = {
+      columns: [{ ref: ['externalCode'] }, { ref: ['companyNav'], expand: ['code'] }],
+    }
+    const result = cqnToOData(cqn as any)
+    expect(result).toContain('$expand=companyNav($select=code)')
+    const m = result.match(/\$select=([^&]+)/)
+    expect(m?.[1]).toBe('externalCode')
+  })
+
   it('supports fromDate only', () => {
     const result = cqnToOData({} as any, { fromDate: '2024-02-01' })
     expect(result).toContain('fromDate=2024-02-01')
