@@ -11,7 +11,7 @@ describe('cqnToOData', () => {
         'and',
         { ref: ['companyNav', 'code'] },
         '=',
-        { val: 'VUB' },
+        { val: 'Company' },
       ],
       limit: { rows: { val: 100 } },
       orderBy: [{ ref: ['startDate'], sort: 'desc' }],
@@ -24,7 +24,7 @@ describe('cqnToOData', () => {
 
     expect(result).toContain('$format=json')
     expect(result).toContain('$select=externalCode,startDate')
-    expect(result).toContain("$filter=status eq 'A' and companyNav/code eq 'VUB'")
+    expect(result).toContain("$filter=status eq 'A' and companyNav/code eq 'Company'")
     expect(result).toContain('$orderby=startDate desc')
     expect(result).toContain('fromDate=2024-01-01')
     expect(result).toContain('toDate=2024-12-31')

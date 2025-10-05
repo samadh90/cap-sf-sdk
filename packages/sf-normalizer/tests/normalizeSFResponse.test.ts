@@ -9,7 +9,7 @@ describe('normalizeSFResponse', () => {
             __metadata: { uri: 'x' },
             externalCode: '001',
             startDate: '/Date(1715817600000)/',
-            companyNav: { __metadata: {}, name: 'VUB' },
+            companyNav: { __metadata: {}, name: 'Company' },
           },
         ],
       },
@@ -17,7 +17,7 @@ describe('normalizeSFResponse', () => {
 
     const result = normalizeSFResponse(raw)
     expect(result).toEqual([
-      { externalCode: '001', startDate: new Date(1715817600000), companyNav: { name: 'VUB' } },
+      { externalCode: '001', startDate: new Date(1715817600000), companyNav: { name: 'Company' } },
     ])
   })
 

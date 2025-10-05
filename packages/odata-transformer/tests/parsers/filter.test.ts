@@ -14,9 +14,9 @@ describe('parseFilter', () => {
       'and',
       { ref: ['companyNav', 'code'] },
       '=',
-      { val: 'VUB' },
+      { val: 'Company' },
     ]
-    expect(parseFilter(where as any)).toBe("status ne 'I' and companyNav/code eq 'VUB'")
+    expect(parseFilter(where as any)).toBe("status ne 'I' and companyNav/code eq 'Company'")
   })
 
   it('passes through unknown string tokens as-is', () => {

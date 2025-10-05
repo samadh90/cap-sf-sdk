@@ -5,7 +5,7 @@ describe('serializeSFRequest', () => {
     const input = {
       externalCode: '001',
       startDate: new Date(1715817600000),
-      companyNav: { name: 'VUB' },
+      companyNav: { name: 'Company' },
     }
 
     const result = serializeSFRequest(input)
@@ -13,7 +13,7 @@ describe('serializeSFRequest', () => {
     expect(result).toEqual({
       externalCode: '001',
       startDate: '/Date(1715817600000)/',
-      companyNav: { name: 'VUB' },
+      companyNav: { name: 'Company' },
     })
   })
 
