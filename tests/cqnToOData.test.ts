@@ -53,4 +53,18 @@ describe('cqnToOData', () => {
     const result = cqnToOData({} as any)
     expect(result).toContain('$format=json')
   })
+
+  it('supports fromDate only', () => {
+    const result = cqnToOData({} as any, { fromDate: '2024-02-01' })
+    expect(result).toContain('fromDate=2024-02-01')
+    expect(result).not.toContain('toDate=')
+    expect(result).not.toContain('asOfDate=')
+  })
+
+  it('supports toDate only', () => {
+    const result = cqnToOData({} as any, { toDate: '2024-03-01' })
+    expect(result).toContain('toDate=2024-03-01')
+    expect(result).not.toContain('fromDate=')
+    expect(result).not.toContain('asOfDate=')
+  })
 })

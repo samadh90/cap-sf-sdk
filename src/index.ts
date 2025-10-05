@@ -6,8 +6,21 @@ import type { CqnSelect, ODataOptions } from './types'
 
 /**
  * Converts a CAP CQN SELECT object into an OData query string.
- * Supports standard OData params ($select, $filter, $orderby, $top)
- * and SuccessFactors-specific params (fromDate, toDate, asOfDate).
+ *
+ * Supported parameters:
+ * - $select (from columns)
+ * - $filter (from where)
+ * - $orderby (from orderBy)
+ * - $top / $skip (from limit)
+ * - SuccessFactors dates: fromDate, toDate or asOfDate (exclusive)
+ *
+ * Rules:
+ * - If `asOfDate` is provided, it is exclusive and `fromDate`/`toDate` are ignored.
+ * - Otherwise, `fromDate` and/or `toDate` can be provided independently.
+ *
+ * @param select CAP CQN SELECT subset
+ * @param opts Optional OData and SuccessFactors options
+ * @returns Query string with parameters joined by '&'
  */
 export function cqnToOData(select: CqnSelect, opts?: ODataOptions): string {
   const params: Record<string, string> = {}
@@ -20,10 +33,12 @@ export function cqnToOData(select: CqnSelect, opts?: ODataOptions): string {
   params['$format'] = 'json'
 
   // SuccessFactors specific
-  if (opts?.asOfDate) params['asOfDate'] = opts.asOfDate
-  else if (opts?.fromDate && opts?.toDate) {
-    params['fromDate'] = opts.fromDate
-    params['toDate'] = opts.toDate
+  // asOfDate is exclusive: if present, don't include fromDate/toDate
+  if (opts?.asOfDate) {
+    params['asOfDate'] = opts.asOfDate
+  } else if (opts?.fromDate || opts?.toDate) {
+    if (opts.fromDate) params['fromDate'] = opts.fromDate
+    if (opts.toDate) params['toDate'] = opts.toDate
   }
 
   return buildQueryString(params)
