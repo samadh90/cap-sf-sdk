@@ -4,6 +4,7 @@ import { parseFilter } from './parsers/filter'
 import { parseOrderBy } from './parsers/orderby'
 import { parseExpand } from './parsers/expand'
 import type { CqnSelect, ODataOptions } from './types'
+import { parseLimit } from './parsers/limit'
 
 /**
  * Converts a CAP CQN SELECT object into an OData query string.
@@ -39,8 +40,8 @@ export function cqnToOData(select: CqnSelect, opts?: ODataOptions): string {
   }
   if (select.where) params['$filter'] = parseFilter(select.where)
   if (select.orderBy) params['$orderby'] = parseOrderBy(select.orderBy)
-  if (select.limit?.rows) params['$top'] = String(select.limit.rows.val)
-  if (select.limit?.offset) params['$skip'] = String(select.limit.offset.val)
+  const limitParams = parseLimit(select.limit as any)
+  Object.assign(params, limitParams)
   params['$format'] = 'json'
 
   // SuccessFactors specific
@@ -54,3 +55,6 @@ export function cqnToOData(select: CqnSelect, opts?: ODataOptions): string {
 
   return buildQueryString(params)
 }
+
+// Re-export commonly used types as part of the public API
+export type { CqnSelect, ODataOptions } from './types'

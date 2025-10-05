@@ -1,10 +1,12 @@
 {
   "$schema": "https://typedoc.org/schema.json",
-  "entryPoints": ["src/index.ts"],
+  "entryPoints": ["src/index.ts", "src/types.ts"],
   "out": "docs",
   "tsconfig": "tsconfig.json",
   "excludeExternals": false,
   "excludePrivate": true,
   "excludeProtected": true,
-  "readme": "none"
+  "readme": "none",
+  "gitRevision": "",
+  "sourceLinkTemplate": ""
 }
