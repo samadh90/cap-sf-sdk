@@ -11,7 +11,7 @@
   "scripts": {
     "build": "npm run build --workspaces",
     "test": "npx jest",
-    "clean": "rimraf dist coverage",
+    "clean": "rimraf dist coverage && npm run clean --workspaces --if-present",
     "dev": "tsup --watch",
     "test:watch": "npx jest --watch",
     "test:coverage": "npx jest --coverage",

@@ -4,16 +4,25 @@
   "description": "Meta-package exporting all modules of cap-sf-sdk.",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
-  "files": ["dist"],
+  "files": [
+    "dist"
+  ],
   "scripts": {
     "build": "tsup src/index.ts --dts",
+    "clean": "rimraf dist",
     "test": "cd ../.. && npx jest --selectProjects sdk"
   },
   "dependencies": {
     "@cap-sf-sdk/odata-transformer": "1.0.0",
     "@cap-sf-sdk/sf-normalizer": "1.0.0"
   },
-  "keywords": ["sdk", "sap", "cap", "successfactors", "odata"],
+  "keywords": [
+    "sdk",
+    "sap",
+    "cap",
+    "successfactors",
+    "odata"
+  ],
   "license": "MIT",
   "publishConfig": {
     "access": "public"
