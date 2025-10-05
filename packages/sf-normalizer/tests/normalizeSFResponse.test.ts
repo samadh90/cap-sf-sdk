@@ -1,4 +1,4 @@
-import { normalizeSFResponse } from '../src/normalizeSFResponse'
+import { normalizeSFResponse } from '../src/normalizers/normalizeSFResponse'
 
 describe('normalizeSFResponse', () => {
   it('should flatten d.results and remove __metadata', () => {
