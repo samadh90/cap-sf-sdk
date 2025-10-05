@@ -1,0 +1,25 @@
+{
+  "name": "@cap-sf-sdk/odata-transformer",
+  "version": "1.0.0",
+  "description": "Transforms SAP CAP CQN queries into OData v2 query strings for SuccessFactors.",
+  "main": "dist/odata-transformer/index.js",
+  "module": "dist/odata-transformer/index.mjs",
+  "types": "dist/odata-transformer/index.d.ts",
+  "scripts": {
+    "build": "tsup src/index.ts --dts",
+    "test": "jest"
+  },
+  "keywords": [
+    "odata",
+    "transformer",
+    "cap",
+    "successfactors"
+  ],
+  "author": "Samad & Soultan Hatsijev",
+  "license": "MIT",
+  "dependencies": {},
+  "devDependencies": {},
+  "publishConfig": {
+    "access": "public"
+  }
+}

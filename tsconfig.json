@@ -6,7 +6,13 @@
     "outDir": "dist",
     "strict": true,
     "esModuleInterop": true,
-    "skipLibCheck": true
+    "skipLibCheck": true,
+    "baseUrl": ".",
+    "paths": {
+      "@odata-transformer/*": ["packages/odata-transformer/src/*"],
+      "@sdk/*": ["packages/sdk/src/*"],
+      "@sf-normalizer/*": ["packages/sf-normalizer/src/*"]
+    }
   },
-  "include": ["src"]
+  "include": ["packages/**/src"]
 }

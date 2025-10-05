@@ -1,6 +1,11 @@
 {
   "$schema": "https://typedoc.org/schema.json",
-  "entryPoints": ["src/index.ts", "src/types.ts"],
+  "entryPoints": [
+    "packages/odata-transformer/src/index.ts",
+    "packages/odata-transformer/src/types.ts",
+    "packages/sdk/src/index.ts",
+    "packages/sf-normalizer/src/index.ts"
+  ],
   "out": "docs",
   "tsconfig": "tsconfig.json",
   "excludeExternals": false,

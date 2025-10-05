@@ -58,3 +58,9 @@ export function cqnToOData(select: CqnSelect, opts?: ODataOptions): string {
 
 // Re-export commonly used types as part of the public API
 export type { CqnSelect, ODataOptions } from './types'
+
+/**
+ * Alias aligned with cap-sf-sdk naming convention.
+ * Provided for discoverability alongside cqnToOData.
+ */
+export const transformCqnToOData = cqnToOData

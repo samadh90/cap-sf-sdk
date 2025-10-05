@@ -1,34 +1,30 @@
 {
   "name": "cap-sf-sdk",
+  "private": true,
   "version": "1.0.0",
-  "main": "index.js",
+  "description": "Lightweight SDK / toolkit for SAP CAP ↔ SuccessFactors OData v2 integration.",
+  "author": "Samad & Soultan Hatsijev",
+  "license": "MIT",
+
+  "workspaces": [
+    "packages/*"
+  ],
+
   "scripts": {
-    "clean": "rimraf dist coverage",
-    "build": "tsup",
-    "dev": "tsup --watch",
+    "build": "npm run build --workspaces",
     "test": "jest",
+    "clean": "rimraf dist coverage",
+    "dev": "tsup --watch",
     "test:watch": "jest --watch",
     "test:coverage": "jest --coverage",
-    "check:format": "prettier --check \"src/**/*.ts\" \"tests/**/*.ts\"",
+    "check:format": "prettier --check \"packages/**/src/**/*.ts\" \"packages/**/tests/**/*.ts\"",
+    "format": "prettier --write .",
     "docs": "typedoc",
     "link:global": "npm link",
-    "link:local": "npm link cap-sf-sdk",
-    "unlink:local": "npm unlink cap-sf-sdk && npm install",
     "release:patch": "npm version patch && npm publish --access public",
     "release:minor": "npm version minor && npm publish --access public"
   },
-  "keywords": [
-    "sap",
-    "cap",
-    "odata",
-    "cqn",
-    "successfactors",
-    "query",
-    "transform"
-  ],
-  "author": "Samad & Soultan Hatsijev",
-  "license": "MIT",
-  "description": "",
+
   "devDependencies": {
     "@types/jest": "^30.0.0",
     "@types/node": "^24.6.2",
@@ -39,5 +35,15 @@
     "tsup": "^8.5.0",
     "typescript": "^5.8.2",
     "typedoc": "^0.27.6"
-  }
+  },
+
+  "keywords": [
+    "sap",
+    "cap",
+    "odata",
+    "cqn",
+    "successfactors",
+    "transform",
+    "sdk"
+  ]
 }
