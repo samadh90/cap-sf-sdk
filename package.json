@@ -1,5 +1,5 @@
 {
-  "name": "cap-odata-transformer",
+  "name": "cap-sf-sdk",
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
@@ -12,8 +12,8 @@
     "check:format": "prettier --check \"src/**/*.ts\" \"tests/**/*.ts\"",
     "docs": "typedoc",
     "link:global": "npm link",
-    "link:local": "npm link cap-odata-transformer",
-    "unlink:local": "npm unlink cap-odata-transformer && npm install",
+    "link:local": "npm link cap-sf-sdk",
+    "unlink:local": "npm unlink cap-sf-sdk && npm install",
     "release:patch": "npm version patch && npm publish --access public",
     "release:minor": "npm version minor && npm publish --access public"
   },

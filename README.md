@@ -27,14 +27,14 @@ cqnToOData({} as any, { toDate: '2024-03-01' })
 // → ...&toDate=2024-03-01
 ```
 
-# cap-odata-transformer
+# cap-sf-sdk
 
 > Convert CAP CQN queries into OData query strings — useful for SuccessFactors or SAP API integrations.
 
 ### 🧩 Example
 
 ```ts
-import { cqnToOData } from 'cap-odata-transformer'
+import { cqnToOData } from 'cap-sf-sdk'
 
 this.on('READ', 'Employees', async (req) => {
   const qs = cqnToOData(req.query, {
