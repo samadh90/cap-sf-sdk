@@ -7,7 +7,7 @@
   "types": "dist/sf-normalizer/index.d.ts",
   "scripts": {
     "build": "tsup src/index.ts --dts",
-    "test": "jest"
+    "test": "cd ../.. && npx jest --selectProjects sf-normalizer"
   },
   "keywords": [
     "normalizer",
@@ -16,8 +16,6 @@
   ],
   "author": "Samad & Soultan Hatsijev",
   "license": "MIT",
-
-
   "dependencies": {},
   "devDependencies": {},
   "publishConfig": {

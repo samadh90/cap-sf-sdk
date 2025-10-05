@@ -7,7 +7,7 @@
   "files": ["dist"],
   "scripts": {
     "build": "tsup src/index.ts --dts",
-    "test": "jest"
+    "test": "cd ../.. && npx jest --selectProjects sdk"
   },
   "dependencies": {
     "@cap-sf-sdk/odata-transformer": "1.0.0",

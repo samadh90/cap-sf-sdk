@@ -5,18 +5,19 @@
   "description": "Lightweight SDK / toolkit for SAP CAP ↔ SuccessFactors OData v2 integration.",
   "author": "Samad & Soultan Hatsijev",
   "license": "MIT",
-
   "workspaces": [
     "packages/*"
   ],
-
   "scripts": {
     "build": "npm run build --workspaces",
-    "test": "jest",
+    "test": "npx jest",
     "clean": "rimraf dist coverage",
     "dev": "tsup --watch",
-    "test:watch": "jest --watch",
-    "test:coverage": "jest --coverage",
+    "test:watch": "npx jest --watch",
+    "test:coverage": "npx jest --coverage",
+    "test:odata-transformer": "npx jest --selectProjects odata-transformer",
+    "test:sdk": "npx jest --selectProjects sdk",
+    "test:sf-normalizer": "npx jest --selectProjects sf-normalizer",
     "check:format": "prettier --check \"packages/**/src/**/*.ts\" \"packages/**/tests/**/*.ts\"",
     "format": "prettier --write .",
     "docs": "typedoc",
@@ -24,7 +25,6 @@
     "release:patch": "npm version patch && npm publish --access public",
     "release:minor": "npm version minor && npm publish --access public"
   },
-
   "devDependencies": {
     "@types/jest": "^30.0.0",
     "@types/node": "^24.6.2",
@@ -36,7 +36,6 @@
     "typescript": "^5.8.2",
     "typedoc": "^0.27.6"
   },
-
   "keywords": [
     "sap",
     "cap",

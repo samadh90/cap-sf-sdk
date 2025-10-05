@@ -7,7 +7,7 @@
   "types": "dist/odata-transformer/index.d.ts",
   "scripts": {
     "build": "tsup src/index.ts --dts",
-    "test": "jest"
+    "test": "cd ../.. && npx jest --selectProjects odata-transformer"
   },
   "keywords": [
     "odata",
