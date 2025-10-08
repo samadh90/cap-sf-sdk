@@ -30,6 +30,10 @@ jobs:
       - name: Build all packages
         run: npm run build
 
+      - name: Skip if no publishable changes
+        run: |
+          npx changeset status --verbose | grep "No packages to release" && echo "🟢 Nothing to publish" && exit 0 || true
+
       - name: Create Release Pull Request or Publish
         uses: changesets/action@v1
         with:
