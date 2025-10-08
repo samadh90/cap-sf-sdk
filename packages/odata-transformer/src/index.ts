@@ -64,3 +64,5 @@ export type { CqnSelect, ODataOptions } from './types'
  * Provided for discoverability alongside cqnToOData.
  */
 export const transformCqnToOData = cqnToOData
+
+// --- IGNORE ---
