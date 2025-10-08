@@ -30,10 +30,27 @@ jobs:
             - name: Build all packages
               run: npm run build
 
+            # 🔍 Check if there are any .changeset files
+            - name: Check for changesets
+              id: changeset_check
+              run: |
+                  if [ -n "$(ls .changeset/*.md 2>/dev/null)" ]; then
+                    echo "has_changesets=true" >> $GITHUB_OUTPUT
+                  else
+                    echo "has_changesets=false" >> $GITHUB_OUTPUT
+                  fi
+
+            # 🧩 Run Changesets only if there are .changeset files
             - name: Create version PR
+              if: steps.changeset_check.outputs.has_changesets == 'true'
               uses: changesets/action@v1
               with:
                   version: npm run version
                   publish: false
               env:
                   GITHUB_TOKEN: ${{ secrets.PERSONAL_GITHUB_TOKEN }}
+
+            # ✅ Skip message when there are no changesets
+            - name: No changesets found
+              if: steps.changeset_check.outputs.has_changesets == 'false'
+              run: echo "🟢 No .changeset files found — skipping version PR creation."
