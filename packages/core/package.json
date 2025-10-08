@@ -1,6 +1,6 @@
 {
   "name": "@cap-sf-sdk/core",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Meta-package exporting all modules of cap-sf-sdk.",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
@@ -14,8 +14,8 @@
     "test": "cd ../.. && npx jest --selectProjects core --passWithNoTests"
   },
   "dependencies": {
-    "@cap-sf-sdk/odata-transformer": "1.0.0",
-    "@cap-sf-sdk/sf-normalizer": "1.0.1"
+    "@cap-sf-sdk/odata-transformer": "1.0.3",
+    "@cap-sf-sdk/sf-normalizer": "1.0.3"
   },
   "keywords": [
     "sdk",
