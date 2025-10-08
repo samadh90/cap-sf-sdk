@@ -1,7 +1,7 @@
 {
   "name": "cap-sf-sdk",
   "private": true,
-  "version": "1.0.0",
+  "version": "1.0.2",
   "description": "Lightweight SDK / toolkit for SAP CAP ↔ SuccessFactors OData v2 integration.",
   "author": "Samad & Soultan Hatsijev",
   "license": "MIT",
