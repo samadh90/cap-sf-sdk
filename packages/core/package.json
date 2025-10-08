@@ -1,6 +1,6 @@
 {
   "name": "@cap-sf-sdk/core",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Meta-package exporting all modules of cap-sf-sdk.",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
@@ -15,7 +15,7 @@
   },
   "dependencies": {
     "@cap-sf-sdk/odata-transformer": "1.0.0",
-    "@cap-sf-sdk/sf-normalizer": "1.0.0"
+    "@cap-sf-sdk/sf-normalizer": "1.0.1"
   },
   "keywords": [
     "sdk",
