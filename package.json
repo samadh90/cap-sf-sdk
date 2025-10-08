@@ -10,6 +10,7 @@
   ],
   "scripts": {
     "build": "npm run build --workspaces",
+    "version": "changeset version",
     "release": "changeset publish",
     "test": "npx jest",
     "clean": "rimraf dist coverage && npm run clean --workspaces --if-present",
