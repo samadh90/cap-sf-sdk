@@ -12,7 +12,7 @@ This monorepo contains three specialized packages:
 | --------------------------------------------------------------- | ---------------------------------------------------------------- | ------------------------------------------------------------------ |
 | [`@cap-sf-sdk/odata-transformer`](./packages/odata-transformer) | Transform CAP CQN queries into OData v2 query strings            | ![npm](https://img.shields.io/npm/v/@cap-sf-sdk/odata-transformer) |
 | [`@cap-sf-sdk/sf-normalizer`](./packages/sf-normalizer)         | Normalize SuccessFactors responses into clean JavaScript objects | ![npm](https://img.shields.io/npm/v/@cap-sf-sdk/sf-normalizer)     |
-| [`@cap-sf-sdk/core`](./packages/sdk)                            | Meta-package that exports all SDK modules                        | ![npm](https://img.shields.io/npm/v/@cap-sf-sdk/core)              |
+| [`@cap-sf-sdk/core`](./packages/core)                           | Meta-package that exports all SDK modules                        | ![npm](https://img.shields.io/npm/v/@cap-sf-sdk/core)              |
 
 ## 🚀 Quick Start
 

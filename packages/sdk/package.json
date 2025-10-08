@@ -1,31 +1,13 @@
 {
-  "name": "@cap-sf-sdk/core",
-  "version": "1.0.0",
-  "description": "Meta-package exporting all modules of cap-sf-sdk.",
-  "main": "dist/index.js",
-  "types": "dist/index.d.ts",
-  "files": [
-    "dist"
-  ],
-  "scripts": {
-    "build": "tsup src/index.ts --dts",
-    "clean": "rimraf dist",
-    "docs": "cd ../.. && npm run docs",
-    "test": "cd ../.. && npx jest --selectProjects sdk"
-  },
-  "dependencies": {
-    "@cap-sf-sdk/odata-transformer": "1.0.0",
-    "@cap-sf-sdk/sf-normalizer": "1.0.0"
-  },
+  "name": "@cap-sf-sdk/sdk-moved",
+  "private": true,
+  "version": "0.0.0",
+  "description": "DEPRECATED: This package has moved to packages/core. Please use @cap-sf-sdk/core.",
   "keywords": [
-    "sdk",
-    "sap",
-    "cap",
-    "successfactors",
-    "odata"
+    "deprecated",
+    "moved",
+    "cap-sf-sdk",
+    "core"
   ],
-  "license": "MIT",
-  "publishConfig": {
-    "access": "public"
-  }
+  "license": "MIT"
 }

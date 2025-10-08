@@ -10,7 +10,7 @@
     "baseUrl": ".",
     "paths": {
       "@odata-transformer/*": ["packages/odata-transformer/src/*"],
-      "@sdk/*": ["packages/sdk/src/*"],
+      "@core/*": ["packages/core/src/*"],
       "@sf-normalizer/*": ["packages/sf-normalizer/src/*"]
     }
   },

@@ -17,7 +17,7 @@
     "test:watch": "npx jest --watch",
     "test:coverage": "npx jest --coverage",
     "test:odata-transformer": "npx jest --selectProjects odata-transformer",
-    "test:sdk": "npx jest --selectProjects sdk",
+    "test:core": "npx jest --selectProjects core --passWithNoTests",
     "test:sf-normalizer": "npx jest --selectProjects sf-normalizer",
     "check:format": "prettier --check \"packages/**/src/**/*.ts\" \"packages/**/tests/**/*.ts\"",
     "format": "prettier --write .",

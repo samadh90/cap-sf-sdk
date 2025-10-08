@@ -3,7 +3,7 @@
   "entryPoints": [
     "packages/odata-transformer/src/index.ts",
     "packages/odata-transformer/src/types.ts",
-    "packages/sdk/src/index.ts",
+    "packages/core/src/index.ts",
     "packages/sf-normalizer/src/index.ts"
   ],
   "out": "docs",

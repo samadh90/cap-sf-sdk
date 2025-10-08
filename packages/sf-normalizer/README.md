@@ -234,7 +234,7 @@ npm run test:coverage
 ## 📚 Related Packages
 
 - [`@cap-sf-sdk/odata-transformer`](../odata-transformer) - Transform CAP queries to OData
-- [`@cap-sf-sdk/core`](../sdk) - Complete SDK with all packages
+- [`@cap-sf-sdk/core`](../core) - Complete SDK with all packages
 
 ## 🤝 Contributing
 

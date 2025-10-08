@@ -44,12 +44,12 @@ export default {
             },
         },
         {
-            displayName: 'sdk',
+            displayName: 'core',
             preset: 'ts-jest/presets/default-esm',
             testEnvironment: 'node',
             extensionsToTreatAsEsm: ['.ts'],
-            testMatch: ['<rootDir>/packages/sdk/tests/**/*.test.ts'],
-            collectCoverageFrom: ['<rootDir>/packages/sdk/src/**/*.ts'],
+            testMatch: ['<rootDir>/packages/core/tests/**/*.test.ts'],
+            collectCoverageFrom: ['<rootDir>/packages/core/src/**/*.ts'],
             transform: {
                 '^.+\\.ts$': [
                     'ts-jest',
@@ -97,7 +97,7 @@ export default {
     coverageReporters: ['text', 'lcov', 'html'],
     moduleNameMapper: {
         '^@odata-transformer/(.*)$': '<rootDir>/packages/odata-transformer/src/$1',
-        '^@sdk/(.*)$': '<rootDir>/packages/sdk/src/$1',
+        '^@core/(.*)$': '<rootDir>/packages/core/src/$1',
         '^@sf-normalizer/(.*)$': '<rootDir>/packages/sf-normalizer/src/$1',
     },
 }

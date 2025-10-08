@@ -171,7 +171,7 @@ npm run test:coverage
 ## 📚 Related Packages
 
 - [`@cap-sf-sdk/sf-normalizer`](../sf-normalizer) - Normalize SuccessFactors responses
-- [`@cap-sf-sdk/core`](../sdk) - Complete SDK with all packages
+- [`@cap-sf-sdk/core`](../core) - Complete SDK with all packages
 
 ## 🤝 Contributing
 
