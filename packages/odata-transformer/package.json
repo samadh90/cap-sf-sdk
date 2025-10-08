@@ -1,6 +1,6 @@
 {
   "name": "@cap-sf-sdk/odata-transformer",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Transforms SAP CAP CQN queries into OData v2 query strings for SuccessFactors.",
   "main": "dist/odata-transformer/index.js",
   "module": "dist/odata-transformer/index.mjs",
