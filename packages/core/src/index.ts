@@ -21,3 +21,5 @@ export function sdkInfo() {
     modules: ['@cap-sf-sdk/odata-transformer', '@cap-sf-sdk/sf-normalizer'],
   }
 }
+
+// --- IGNORE ---
