@@ -1,6 +1,6 @@
 {
   "name": "@cap-sf-sdk/sf-normalizer",
-  "version": "1.0.1",
+  "version": "1.0.3",
   "description": "Normalizes SuccessFactors OData v2 JSON responses into clean JavaScript objects.",
   "main": "dist/sf-normalizer/index.js",
   "module": "dist/sf-normalizer/index.mjs",
