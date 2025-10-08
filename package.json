@@ -10,6 +10,7 @@
   ],
   "scripts": {
     "build": "npm run build --workspaces",
+    "version": "changeset version",
     "release": "changeset publish",
     "test": "npx jest",
     "clean": "rimraf dist coverage && npm run clean --workspaces --if-present",
@@ -27,6 +28,7 @@
     "release:minor": "npm version minor && npm publish --access public"
   },
   "devDependencies": {
+    "@changesets/changelog-github": "^0.5.1",
     "@changesets/cli": "^2.29.7",
     "@types/jest": "^30.0.0",
     "@types/node": "^24.6.2",
